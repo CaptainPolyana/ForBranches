@@ -1,0 +1,75 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int number_of_operation;
+	short Addition = 1;
+	short Subtraction = 2;
+	short Multiplication = 3;
+	short Division = 4;
+	short Division_from_the_remainder = 5;
+	float First_value;
+	float Second_value;
+	float answer;
+	int Third_value;
+	int Four_value;
+
+
+	cout << "Выберите номер операции: " << endl << "1. Сложение " << endl << "2. Вычитание" << endl << "3. Умножение" << endl << "4. Деление" << endl << "5. Деление от остатка" << endl;
+	cout << "Номер выбранный операции: ";
+	cin >> number_of_operation;
+	cout << "Операция под номером " << number_of_operation << " выбрана" << endl;
+	
+		if (number_of_operation == 1) {
+			cout << "Введите первое число: ";
+			cin >> First_value;
+			cout << "Введите второе число: ";
+			cin >> Second_value;
+			answer = First_value + Second_value;
+			cout << "Результат: " << First_value << " + " << Second_value << " = " << answer;
+		}
+		else if (number_of_operation == 2) {
+			cout << "Введите первое число: ";
+			cin >> First_value;
+			cout << "Введите второе число: ";
+			cin >> Second_value;
+			answer = First_value - Second_value;
+			cout << "Результат: " << First_value << " - " << Second_value << " = " << answer;
+		}
+		else if (number_of_operation == 3) {
+			cout << "Введите первое число: ";
+			cin >> First_value;
+			cout << "Введите второе число: ";
+			cin >> Second_value;
+			answer = First_value * Second_value;
+			cout << "Результат: " << First_value << " * " << Second_value << " = " << answer;
+		}
+		else if (number_of_operation == 4) {
+			if (Second_value != 0) {
+				cout << "Введите первое число: ";
+				cin >> First_value;
+				cout << "Введите второе число: ";
+				cin >> Second_value;
+				answer = First_value / Second_value;
+				cout << "Результат: " << First_value << " : " << Second_value << " = " << answer;
+			}
+			else
+			{
+				cout << "Ошибка! На 0 делить нельзя";
+			}
+		}
+		else if (number_of_operation == 5) {
+			cout << "Введите целое первое число: ";
+			cin >> Third_value;
+			cout << "Введите целое второе число: ";
+			cin >> Four_value;
+				answer = Third_value % Four_value;
+				cout << "Результат: " << Third_value << " : " << Four_value << " = " << answer;
+			
+			
+		}
+		else {
+			cout << "Операции с данным номером: " << number_of_operation << " нет в перечне";
+		}
+	}
