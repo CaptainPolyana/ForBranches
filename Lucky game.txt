@@ -1,0 +1,58 @@
+#include <iostream>
+#include <random>
+using namespace std;
+int main() {
+	string red = "\x1b[91m";
+	string green = "\x1b[92m";
+	string white = "\x1b[0m";
+	setlocale(0, "");
+	int start = 1;
+	int end = 10;
+	int x = rand() % (end - start + 1) + start;
+	int choice;
+	int luck;
+	int tried = 5;
+	int correct = 0;
+
+	int user_answer = 0;
+	cout << "1. Начать игру;" << endl;
+	cout << "2. Выйти." << endl;
+	cout << "Сделайте выбор: "; cin >> choice;
+	if (choice == 1) {
+		cout << "Угаданных чисел: " << " [ " << user_answer << " / " << "3 ]" << endl;
+		cout << "Попыток: " << tried << endl;;
+		while (user_answer < 3) {
+			cout << "Угадать число: ";
+			cin >> correct;
+			int x = rand() % (end - start + 1) + start;
+			if (correct == x) {
+				user_answer++;
+				cout << green << "Вы угадали число!" << white << endl;
+				cout << "Угаданных чисел: " << " [ " << user_answer << " / " << "3 ]" << endl;
+			}
+			else {
+				cout << red << "Вы не угадали число!" << white << endl;
+				tried--;
+				cout << "Попыток: " << tried << endl;
+			}
+			if (tried == 0) {
+				exit(0);
+			}
+
+		}
+
+	}
+	if (user_answer == 3) {
+		cout << "Вы победили!";
+	}
+	else if (choice == 2) {
+		exit(0);
+	}
+	else {
+		cout << red << "Ошибка!";
+	}
+
+
+	int _; cin >> _;
+	return 0;
+}
